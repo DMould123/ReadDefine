@@ -1,8 +1,9 @@
-import { useColorScheme } from 'react-native'
+import { useColorScheme, StyleSheet, View } from 'react-native'
 import { Stack } from 'expo-router'
 import { Colors } from '../constants/Colors'
+import Footer from '../components/Footer'
+import { Ionicons } from '@expo/vector-icons' 
 import { StatusBar } from 'react-native'
-import { Ionicons } from '@expo/vector-icons' // Import Ionicons
 
 const RootLayout = () => {
   const colorScheme = useColorScheme()
@@ -10,7 +11,8 @@ const RootLayout = () => {
 
   return (
     <>
-      <StatusBar value="auto" />
+    <StatusBar style="auto" />
+    <View style={styles.container}>
       <Stack
         screenOptions={{
           headerStyle: {
@@ -24,6 +26,7 @@ const RootLayout = () => {
           headerBackTitleVisible: false,
         }}
       >
+         <Stack.Screen name="(auth)" options={{ headerShown: false }} />
         <Stack.Screen
           name="index"
           options={{
@@ -68,8 +71,17 @@ const RootLayout = () => {
           }}
         />
       </Stack>
+      <Footer />
+    </View>
     </>
+
   )
 }
 
 export default RootLayout
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  },
+})

@@ -1,4 +1,4 @@
-import { StyleSheet, Text, Image } from 'react-native'
+import { StyleSheet, Image } from 'react-native'
 import { Link } from 'expo-router'
 import Logo from '../assets/img/book-logo.png'
 
@@ -16,8 +16,7 @@ const Home = () => {
       <Spacer height={10} />
       <ThemedText>#1 Independent Reading Log Journal</ThemedText>
       <Spacer />
-      <Link href="/about" style={styles.link}><ThemedText>About Page</ThemedText></Link>
-      <Link href="/contact" style={styles.link}><ThemedText>Contact Us</ThemedText></Link>
+      <Link href="/(auth)/login" style={styles.link}><ThemedText> Login to Your Account</ThemedText></Link>
     </ThemedView>
   )
 }
