@@ -1,16 +1,19 @@
-import { StyleSheet, Text, View, Image } from 'react-native'
+import { StyleSheet, Text, Image } from 'react-native'
 import { Link } from 'expo-router'
 import Logo from '../assets/img/book-logo.png'
 
+// Themed Component
+import ThemedView from '../components/ThemedView'
+
 const Home = () => {
   return (
-    <View style={styles.container}>
+    <ThemedView style={styles.container}>
       <Image source={Logo} style={styles.img} />
       <Text style={styles.title}>ReadDefine</Text>
-      <Text style={{ marginTop: 10, marginBottom: 30 }}> #1 Independent Reading Log Journal</Text>
+      <Text style={{ marginTop: 10, marginBottom: 30 }}>#1 Independent Reading Log Journal</Text>
       <Link href="/about" style={styles.link}>About Page</Link>
       <Link href="/contact" style={styles.link}>Contact Us</Link>
-    </View>
+    </ThemedView>
   )
 }
 
@@ -21,7 +24,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#ffffff',
   },
   title: {
     fontSize: 30,
