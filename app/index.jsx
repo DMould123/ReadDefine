@@ -6,8 +6,8 @@ const Home = () => {
   return (
     <View style={styles.container}>
       <Image source={Logo} style={styles.img} />
-      <Text style={styles.title}>Your Very Own</Text>
-      <Text style={{ marginTop: 10, marginBottom: 30 }}>Reading Log Journal</Text>
+      <Text style={styles.title}>ReadDefine</Text>
+      <Text style={{ marginTop: 10, marginBottom: 30 }}> #1 Independent Reading Log Journal</Text>
       <Link href="/about" style={styles.link}>About Page</Link>
       <Link href="/contact" style={styles.link}>Contact Us</Link>
     </View>
