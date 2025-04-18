@@ -1,17 +1,18 @@
-import { StyleSheet, Text } from 'react-native'
+import { StyleSheet } from 'react-native'
 import { Link } from 'expo-router'
 import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText'
 
 const About = () => {
   return (
     <ThemedView style={styles.container}>
-      <Text style={styles.title}>About ReadDefine</Text>
-      <Text style={styles.description}>
+      <ThemedText style={styles.title}>About ReadDefine</ThemedText>
+      <ThemedText style={styles.description}>
         ReadDefine is your personal reading log journal. Keep track of your reading habits, 
         log your favorite books, and reflect on your reading journey. Designed to be simple 
         and intuitive, ReadDefine helps you stay organized and motivated.
-      </Text>
-      <Link href="/" style={styles.link}>Back Home</Link>
+      </ThemedText>
+      <Link href="/" style={styles.link}><ThemedText>Back Home</ThemedText></Link>
     </ThemedView>
   )
 }

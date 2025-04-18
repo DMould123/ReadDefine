@@ -1,20 +1,21 @@
 import { StyleSheet, Text } from 'react-native'
 import { Link } from 'expo-router'
 import ThemedView from '../components/ThemedView'
+import ThemedText from '../components/ThemedText'
 
 const Contact = () => {
   return (
     <ThemedView style={styles.container}>
-      <Text style={styles.title}>Contact Us</Text>
-      <Text style={styles.description}>
+      <ThemedText style={styles.title}>Contact Us</ThemedText>
+      <ThemedText style={styles.description}>
         Have questions or feedback? We'd love to hear from you! 
         Reach out to us at:
-      </Text>
-      <Text style={styles.email}>support@readdefine.com</Text>
-      <Text style={styles.description}>
+      </ThemedText>
+      <ThemedText style={styles.email}>support@readdefine.com</ThemedText>
+      <ThemedText style={styles.description}>
         Follow us on social media to stay updated with the latest features and news.
-      </Text>
-      <Link href="/" style={styles.link}>Back Home</Link>
+      </ThemedText>
+      <Link href="/" style={styles.link}><ThemedText>Back Home</ThemedText></Link>
     </ThemedView>
   )
 }
