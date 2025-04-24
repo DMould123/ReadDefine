@@ -21,4 +21,4 @@ export const Colors = {
     iconColorFocused: "#1f1d2a",
     uiBackground: "#dbdae6",
   },
-}
+};
