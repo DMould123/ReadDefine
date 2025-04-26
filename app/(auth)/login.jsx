@@ -6,8 +6,6 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
-
-// Themed Components
 import ThemedView from "../../components/ThemedView";
 import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
@@ -24,12 +22,11 @@ const Login = () => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ThemedView style={styles.container}>
+      <ThemedView style={styles.container} showLogo={true}>
         <Spacer />
         <ThemedText title={true} style={styles.title}>
           Login to Your Account
         </ThemedText>
-
         <ThemedTextInput
           style={{ width: "80%", marginBottom: 20 }}
           placeholder="Email"

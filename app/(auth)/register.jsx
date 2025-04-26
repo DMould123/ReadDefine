@@ -25,7 +25,7 @@ const Register = () => {
 
   return (
     <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
-      <ThemedView style={styles.container}>
+      <ThemedView style={styles.container} showLogo={true}>
         <Spacer />
         <ThemedText title={true} style={styles.title}>
           Create an Account

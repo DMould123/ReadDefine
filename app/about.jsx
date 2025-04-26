@@ -5,7 +5,7 @@ import ThemedText from "../components/ThemedText";
 
 const About = () => {
   return (
-    <ThemedView style={styles.container}>
+    <ThemedView style={styles.container} showLogo={true}>
       <ThemedText style={styles.title}>About ReadDefine</ThemedText>
       <ThemedText style={styles.description}>
         ReadDefine is your personal reading log journal. Keep track of your

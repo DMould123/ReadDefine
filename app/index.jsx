@@ -1,16 +1,12 @@
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet } from "react-native";
 import { Link } from "expo-router";
-import Logo from "../assets/img/book-logo.png";
-
-// Themed Components
-import Spacer from "../components/Spacer";
 import ThemedView from "../components/ThemedView";
 import ThemedText from "../components/ThemedText";
+import Spacer from "../components/Spacer";
 
 const Home = () => {
   return (
-    <ThemedView style={styles.container}>
-      <Image source={Logo} style={styles.img} />
+    <ThemedView style={styles.container} showLogo={true}>
       <Spacer />
       <ThemedText style={styles.title} title={true}>
         ReadDefine
@@ -19,13 +15,13 @@ const Home = () => {
       <ThemedText>#1 Independent Reading Log Journal</ThemedText>
       <Spacer />
       <Link href="/login" style={styles.link}>
-        <ThemedText> Login to Your Account</ThemedText>
+        <ThemedText>Login to Your Account</ThemedText>
       </Link>
       <Link href="/register" style={styles.link}>
         <ThemedText>Register an Account</ThemedText>
       </Link>
       <Link href="/profile" style={styles.link}>
-        <ThemedText> Profile</ThemedText>
+        <ThemedText>Profile</ThemedText>
       </Link>
     </ThemedView>
   );
@@ -42,9 +38,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 30,
     fontWeight: "bold",
-  },
-  img: {
-    marginVertical: 20,
   },
   link: {
     fontSize: 16,

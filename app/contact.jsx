@@ -5,7 +5,7 @@ import ThemedText from "../components/ThemedText";
 
 const Contact = () => {
   return (
-    <ThemedView style={styles.container}>
+    <ThemedView style={styles.container} showLogo={true}>
       <ThemedText style={styles.title}>Contact Us</ThemedText>
       <ThemedText style={styles.description}>
         Have questions or feedback? We'd love to hear from you! Reach out to us
