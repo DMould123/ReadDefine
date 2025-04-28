@@ -4,13 +4,14 @@ import { Colors } from "../constants/Colors";
 import Footer from "../components/Footer";
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
+import { UserProvider } from "./contexts/UserContext";
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();
   const theme = Colors[colorScheme] ?? Colors.light;
 
   return (
-    <>
+    <UserProvider>
       <StatusBar style="auto" />
       <View style={styles.container}>
         <Stack
@@ -74,7 +75,7 @@ const RootLayout = () => {
         </Stack>
         <Footer />
       </View>
-    </>
+    </UserProvider>
   );
 };
 
