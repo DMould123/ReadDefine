@@ -15,7 +15,7 @@ const ThemedView = ({ style, safe = false, showLogo = false, ...props }) => {
           backgroundColor: theme.background,
           paddingTop: safe ? insets.top : 0,
           paddingBottom: safe ? insets.bottom : 0,
-          alignItems: "center", // Center the logo
+          alignItems: "center",
         },
         style,
       ]}
