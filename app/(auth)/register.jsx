@@ -19,8 +19,13 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const { user, register } = useUser();
+
   const handleSubmit = async () => {
-    console.log("Register form submitted", email, password);
+    try {
+      await register(email, password);
+      console.log("current user is: ", user);
+    } catch (error) {}
   };
 
   return (
