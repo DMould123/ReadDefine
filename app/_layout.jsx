@@ -4,7 +4,7 @@ import { Colors } from "../constants/Colors";
 import Footer from "../components/Footer";
 import { Ionicons } from "@expo/vector-icons";
 import { StatusBar } from "react-native";
-import { UserProvider } from "./contexts/UserContext";
+import { UserProvider } from "../contexts/UserContext";
 
 const RootLayout = () => {
   const colorScheme = useColorScheme();

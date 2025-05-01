@@ -9,9 +9,9 @@ export function UserProvider({ children }) {
 
   async function login(email, password) {
     try {
-      await account.createEmailSession(email, password);
-      const userData = await account.get();
-      setUser(userData);
+      await account.createEmailPasswordSession(email, password);
+      const response = await account.get();
+      setUser(response);
     } catch (error) {
       console.log(error.message);
     }
@@ -27,9 +27,16 @@ export function UserProvider({ children }) {
   }
 
   async function logout() {}
+
   return (
-    // Provide user state and authentication functions
-    <UserContext.Provider value={{ user, login, register, logout }}>
+    <UserContext.Provider
+      value={{
+        user,
+        login,
+        logout,
+        register,
+      }}
+    >
       {children}
     </UserContext.Provider>
   );

@@ -18,10 +18,10 @@ const Login = () => {
   const [password, setPassword] = useState("");
 
   const { login } = useUser();
+
   const handleSubmit = async () => {
     try {
-      await login(email, password);
-      console.log("current user is: ", user);
+      await register(email, password);
     } catch (error) {}
   };
 

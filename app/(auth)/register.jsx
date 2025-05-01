@@ -6,6 +6,7 @@ import {
 } from "react-native";
 import { Link } from "expo-router";
 import { useState } from "react";
+import { useUser } from "../../hooks/useUser";
 
 // Themed Components
 import ThemedView from "../../components/ThemedView";
@@ -19,12 +20,11 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
-  const { user, register } = useUser();
+  const { register } = useUser();
 
   const handleSubmit = async () => {
     try {
       await register(email, password);
-      console.log("current user is: ", user);
     } catch (error) {}
   };
 
