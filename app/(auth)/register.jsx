@@ -14,18 +14,43 @@ import ThemedText from "../../components/ThemedText";
 import ThemedButton from "../../components/ThemedButton";
 import ThemedTextInput from "../../components/ThemedTextInput";
 import Spacer from "../../components/Spacer";
+import { Colors } from "../../constants/Colors";
 
 const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [error, setError] = useState(null);
 
   const { register } = useUser();
 
   const handleSubmit = async () => {
+    setError(null);
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address");
+      return;
+    }
+
+    // Validate password length
+    if (password.length < 6) {
+      setError("Password must be at least 6 characters long!");
+      return;
+    }
+
+    // Validate password confirmation
+    if (password !== confirmPassword) {
+      setError("Passwords do not match!");
+      return;
+    }
+
     try {
       await register(email, password);
-    } catch (error) {}
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   return (
@@ -61,8 +86,10 @@ const Register = () => {
         <ThemedButton onPress={handleSubmit}>
           <Text style={{ color: "#f2f2f2" }}>Register</Text>
         </ThemedButton>
+        <Spacer />
+        {error && <Text style={styles.error}>{error}</Text>}
         <Spacer height={100} />
-        <Link href="/(auth)/login" replace>
+        <Link href="/login" replace>
           <ThemedText style={{ textAlign: "center", color: "#1e90ff" }}>
             Login instead
           </ThemedText>
@@ -84,5 +111,14 @@ const styles = StyleSheet.create({
     textAlign: "center",
     fontSize: 18,
     marginBottom: 30,
+  },
+  error: {
+    color: Colors.warning,
+    padding: 10,
+    backgroundColor: "#f5c1c8",
+    borderColor: Colors.warning,
+    borderWidth: 1,
+    borderRadius: 6,
+    margin: 10,
   },
 });
