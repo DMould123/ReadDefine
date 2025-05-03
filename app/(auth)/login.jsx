@@ -23,6 +23,20 @@ const Login = () => {
 
   const handleSubmit = async () => {
     setError(null);
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+
+    // Validate password length
+    if (password.length < 6) {
+      setError("Please enter a valid password.");
+      return;
+    }
+
     try {
       await login(email, password);
     } catch (error) {
