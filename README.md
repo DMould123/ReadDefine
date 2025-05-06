@@ -2,7 +2,7 @@
 
 ## Description 🌍
 
-ReadDefine is a React Native application designed to help users log and track their reading habits. With features like user authentication, themed UI, and a clean, responsive design, ReadDefine serves as a personal reading journal for book enthusiasts.
+ReadDefine is a React Native application designed to help users log and track their reading habits. ReadDefine has features such as user authentication, themed UI, and a clean, responsive design. ReadDefine serves as a personal reading journal for book enthusiasts.
 
 ## Objectives 🎯
 
@@ -56,7 +56,7 @@ cd ReadDefine
 - Colors.js - Centralized color definitions for light and dark themes
 - appwrite.js - Appwrite client setup for authentication 
 - (auth) - Authentication-related pages (login, register)
-(dashboard) - Dashboard pages (profile, books, create)
+- (dashboard) - Dashboard pages (profile, books, create)
 
 ## Customization 🛠️
 
